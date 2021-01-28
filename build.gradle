@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'war'
 }
 
 group 'me.codetaro'
@@ -15,6 +16,14 @@ dependencies {
     compile("log4j:log4j:${log4jVersion}")
     compile("org.springframework:spring-jdbc:${springVersion}")
     compile("com.h2database:h2:${h2Version}")
+    compile "org.springframework:spring-webmvc:$springVersion"
+    compile "org.apache.commons:commons-lang3:$commonsLangVersion"
+    compile "org.hibernate:hibernate-validator:$hibernateValidatorVersion"
+
+    compile "javax.servlet:jstl:$jstlVersion"
+    providedCompile "javax.servlet:javax.servlet-api:$servletApiVersion"
+//    providedCompile "javax.servlet.jsp:jsp-api:$jspApiVersion"
+//    providedCompile "javax.el:javax.el-api:$jspElVersion"
 
     testCompile("junit:junit:${junitVersion}")
     testCompile("org.mockito:mockito-core:${mockitoVersion}")
