@@ -22,11 +22,21 @@ dependencies {
 
     compile "javax.servlet:jstl:$jstlVersion"
     providedCompile "javax.servlet:javax.servlet-api:$servletApiVersion"
-//    providedCompile "javax.servlet.jsp:jsp-api:$jspApiVersion"
-//    providedCompile "javax.el:javax.el-api:$jspElVersion"
+    providedCompile "javax.servlet.jsp:jsp-api:$jspApiVersion"
+    providedCompile "javax.el:javax.el-api:$jspElVersion"
+
+    compile ("org.apache.tiles:tiles-core:$tilesVersion") {
+        exclude group: 'org.slf4j'
+    }
+    compile ("org.apache.tiles:tiles-jsp:$tilesVersion") {
+        exclude group: 'org.slf4j'
+    }
+
+    compile "org.thymeleaf:thymeleaf-spring4:$thymeleafVersion"
 
     testCompile("junit:junit:${junitVersion}")
     testCompile("org.mockito:mockito-core:${mockitoVersion}")
     testCompile("org.springframework:spring-test:${springVersion}")
+    testCompile "org.hamcrest:hamcrest-library:$hamcrestVersion"
     testCompile("com.github.stefanbirkner:system-rules:${systemRulesVersion}")
 }
