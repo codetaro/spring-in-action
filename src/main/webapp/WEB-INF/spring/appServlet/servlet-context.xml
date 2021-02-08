@@ -8,7 +8,7 @@
 
     <cache:annotation-driven />
 
-    <context:component-scan base-package="ch06.thymeleaf.spittr" />
+    <context:component-scan base-package="ch07.spittr" />
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/" />
